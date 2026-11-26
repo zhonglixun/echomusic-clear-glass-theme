@@ -13,6 +13,8 @@ const DEFAULT_SETTINGS = {
   iconContent: true,
 };
 
+const layeredBackground = (...layers) => layers.join(',');
+
 const PRESETS = [
   {
     id: 'qinglan-mint',
@@ -27,12 +29,18 @@ const PRESETS = [
     darkAccent2: '#9bc9df',
     darkAccent3: '#efb4a2',
     darkAccent4: '#c1b8ef',
-    shell: '#e5f7ef',
-    sidebar: '#eefaf5',
-    main: '#f5fbf8',
+    shell: '#ebf8f1',
+    sidebar: '#f3fbf6',
+    main: '#f8fcf9',
     description: '更明显的薄荷绿空气感，清爽但不刺眼。',
-    gradient:
-      'linear-gradient(138deg, #dff4e9 0%, #d9f3ee 18%, #ecfaf4 42%, #f4f8ff 68%, #fff5ee 88%, #fffdf9 100%)',
+    gradient: layeredBackground(
+      'radial-gradient(ellipse 155% 32% at 16% -10%, rgba(85,188,236,0.26) 0%, rgba(255,255,255,0.21) 43%, transparent 82%)',
+      'radial-gradient(ellipse 118% 26% at 96% 4%, rgba(143,180,232,0.19) 0%, rgba(255,255,255,0.17) 45%, transparent 84%)',
+      'radial-gradient(ellipse 146% 34% at 33% 110%, rgba(96,225,183,0.28) 0%, rgba(255,255,255,0.16) 44%, transparent 84%)',
+      'radial-gradient(ellipse 96% 24% at 102% 92%, rgba(245,188,161,0.11) 0%, rgba(255,255,255,0.12) 42%, transparent 86%)',
+      'radial-gradient(ellipse 138% 32% at 55% 47%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.11) 52%, transparent 88%)',
+      'linear-gradient(177deg, #c6e8f8 0%, #d9f0fb 12%, #edf8fc 30%, #fbfdfd 48%, #f4fcf8 64%, #e6f9ef 82%, #eafbf3 100%)',
+    ),
   },
   {
     id: 'qinglan-sky',
@@ -47,12 +55,19 @@ const PRESETS = [
     darkAccent2: '#a9bdf4',
     darkAccent3: '#efb3aa',
     darkAccent4: '#c8b7f0',
-    shell: '#e6f0fd',
-    sidebar: '#eff6fe',
-    main: '#f6faff',
+    shell: '#ecf3fe',
+    sidebar: '#f4f9ff',
+    main: '#f8fbff',
     description: '真正的天青蓝背景与蓝色强调色，清爽干净，不偏青绿。',
-    gradient:
-      'linear-gradient(142deg, #dfeaff 0%, #dcefff 20%, #eef7ff 43%, #f5f2ff 68%, #fff1e8 88%, #fffdfb 100%)',
+    gradient: layeredBackground(
+      'radial-gradient(ellipse 155% 32% at 14% -10%, rgba(94,156,234,0.28) 0%, rgba(255,255,255,0.20) 43%, transparent 82%)',
+      'radial-gradient(ellipse 122% 27% at 95% 2%, rgba(126,202,238,0.20) 0%, rgba(255,255,255,0.17) 45%, transparent 84%)',
+      'radial-gradient(ellipse 146% 34% at 31% 110%, rgba(125,158,232,0.22) 0%, rgba(255,255,255,0.17) 44%, transparent 84%)',
+      'radial-gradient(ellipse 102% 25% at 103% 90%, rgba(199,176,236,0.16) 0%, rgba(255,255,255,0.12) 43%, transparent 86%)',
+      'radial-gradient(ellipse 96% 22% at 84% 105%, rgba(245,185,165,0.10) 0%, rgba(255,255,255,0.11) 42%, transparent 88%)',
+      'radial-gradient(ellipse 140% 32% at 56% 47%, rgba(255,255,255,0.31) 0%, rgba(255,255,255,0.11) 52%, transparent 88%)',
+      'linear-gradient(177deg, #c6e2fa 0%, #d9ecfc 12%, #eef7fe 30%, #fbfdff 48%, #f5f7ff 64%, #e9efff 82%, #edf2ff 100%)',
+    ),
   },
 ];
 

@@ -154,35 +154,36 @@ html.ql-theme-active ::-webkit-scrollbar-thumb:active {
 /* ── 连续背景 ─────────────────────────────────────────────────────────── */
 
 html.ql-theme-active .theme-background-base {
-  background-color: #edf9f8 !important;
+  background-color: #f3faf7 !important;
   background-image:
-    radial-gradient(82% 82% at 2% 0%, rgba(116, 220, 215, 0.2) 0%, transparent 68%),
-    radial-gradient(68% 74% at 98% 4%, rgba(163, 208, 246, 0.22) 0%, transparent 70%),
-    linear-gradient(135deg, #e3f6f4 0%, #edf9f8 36%, #f3f8fd 70%, #fcfdff 100%) !important;
+    radial-gradient(ellipse 68% 78% at 3% 0%, rgba(120, 207, 195, 0.16) 0%, rgba(255, 255, 255, 0.18) 36%, transparent 74%),
+    radial-gradient(ellipse 64% 72% at 98% 3%, rgba(158, 191, 237, 0.17) 0%, rgba(255, 255, 255, 0.14) 40%, transparent 76%),
+    linear-gradient(128deg, #eaf8f2 0%, #f4fbf7 38%, #f2f7fc 72%, #fff7f1 100%) !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
 }
 
 html.ql-theme-active[data-ql-tint='mint'] .theme-background-base {
-  background-color: #edf8f2 !important;
+  background-color: #f3fbf7 !important;
   background-image:
-    radial-gradient(42% 54% at 4% 5%, rgba(91, 211, 172, 0.31) 0%, transparent 66%),
-    radial-gradient(38% 44% at 53% -6%, rgba(112, 177, 226, 0.21) 0%, transparent 68%),
-    radial-gradient(43% 48% at 101% 13%, rgba(245, 191, 158, 0.2) 0%, transparent 70%),
-    radial-gradient(42% 48% at 84% 82%, rgba(173, 157, 231, 0.16) 0%, transparent 70%),
-    radial-gradient(58% 60% at 19% 103%, rgba(118, 222, 195, 0.24) 0%, transparent 71%),
-    linear-gradient(134deg, #e4f7ee 0%, #f0fbf6 38%, #f4f9fd 73%, #fefbf7 100%) !important;
+    radial-gradient(ellipse 155% 32% at 16% -10%, rgba(85, 188, 236, 0.26) 0%, rgba(255, 255, 255, 0.21) 43%, transparent 82%),
+    radial-gradient(ellipse 118% 26% at 96% 4%, rgba(143, 180, 232, 0.19) 0%, rgba(255, 255, 255, 0.17) 45%, transparent 84%),
+    radial-gradient(ellipse 146% 34% at 33% 110%, rgba(96, 225, 183, 0.28) 0%, rgba(255, 255, 255, 0.16) 44%, transparent 84%),
+    radial-gradient(ellipse 96% 24% at 102% 92%, rgba(245, 188, 161, 0.11) 0%, rgba(255, 255, 255, 0.12) 42%, transparent 86%),
+    radial-gradient(ellipse 138% 32% at 55% 47%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.11) 52%, transparent 88%),
+    linear-gradient(177deg, #c6e8f8 0%, #d9f0fb 12%, #edf8fc 30%, #fbfdfd 48%, #f4fcf8 64%, #e6f9ef 82%, #eafbf3 100%) !important;
 }
 
 html.ql-theme-active[data-ql-tint='sky'] .theme-background-base {
-  background-color: #edf4ff !important;
+  background-color: #f3f8ff !important;
   background-image:
-    radial-gradient(43% 55% at 2% 2%, rgba(92, 151, 242, 0.3) 0%, transparent 66%),
-    radial-gradient(39% 46% at 48% -7%, rgba(122, 211, 219, 0.2) 0%, transparent 68%),
-    radial-gradient(44% 49% at 102% 15%, rgba(218, 194, 242, 0.22) 0%, transparent 70%),
-    radial-gradient(42% 48% at 87% 86%, rgba(255, 199, 171, 0.18) 0%, transparent 70%),
-    radial-gradient(58% 60% at 23% 104%, rgba(134, 172, 244, 0.23) 0%, transparent 71%),
-    linear-gradient(134deg, #e1edff 0%, #edf5ff 39%, #f5f8ff 73%, #fffaf7 100%) !important;
+    radial-gradient(ellipse 155% 32% at 14% -10%, rgba(94, 156, 234, 0.28) 0%, rgba(255, 255, 255, 0.2) 43%, transparent 82%),
+    radial-gradient(ellipse 122% 27% at 95% 2%, rgba(126, 202, 238, 0.2) 0%, rgba(255, 255, 255, 0.17) 45%, transparent 84%),
+    radial-gradient(ellipse 146% 34% at 31% 110%, rgba(125, 158, 232, 0.22) 0%, rgba(255, 255, 255, 0.17) 44%, transparent 84%),
+    radial-gradient(ellipse 102% 25% at 103% 90%, rgba(199, 176, 236, 0.16) 0%, rgba(255, 255, 255, 0.12) 43%, transparent 86%),
+    radial-gradient(ellipse 96% 22% at 84% 105%, rgba(245, 185, 165, 0.1) 0%, rgba(255, 255, 255, 0.11) 42%, transparent 88%),
+    radial-gradient(ellipse 140% 32% at 56% 47%, rgba(255, 255, 255, 0.31) 0%, rgba(255, 255, 255, 0.11) 52%, transparent 88%),
+    linear-gradient(177deg, #c6e2fa 0%, #d9ecfc 12%, #eef7fe 30%, #fbfdff 48%, #f5f7ff 64%, #e9efff 82%, #edf2ff 100%) !important;
 }
 
 /* 快捷卡使用固定功能色：每张卡都有独立颜色，拖动换位后不变。 */
@@ -258,45 +259,45 @@ html.ql-theme-active .ql-halo {
   position: absolute;
   display: block;
   border-radius: 50%;
-  filter: blur(72px);
+  filter: blur(66px);
   opacity: var(--ql-glow-alpha);
+  animation: ql-drift-a 35s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
   will-change: transform;
 }
 
 html.ql-theme-active .ql-halo-a {
-  top: -26%;
-  left: -8%;
-  width: 48vw;
-  height: 48vw;
-  background: radial-gradient(
-    circle,
-    color-mix(in srgb, var(--ql-accent) 24%, transparent) 0%,
-    transparent 70%
-  );
+  top: -24%;
+  left: -18%;
+  width: 136vw;
+  height: 42vh;
+  background:
+    radial-gradient(ellipse 56% 76% at 30% 56%, color-mix(in srgb, var(--ql-accent-2) 20%, transparent) 0%, rgba(255, 255, 255, 0.1) 44%, transparent 79%),
+    radial-gradient(ellipse 54% 70% at 73% 48%, color-mix(in srgb, var(--ql-accent) 14%, transparent) 0%, transparent 78%);
 }
 
 html.ql-theme-active .ql-halo-b {
-  right: -10%;
-  top: 6%;
-  width: 42vw;
-  height: 42vw;
-  background: radial-gradient(
-    circle,
-    color-mix(in srgb, var(--ql-accent-2) 19%, transparent) 0%,
-    transparent 72%
-  );
+  right: -20%;
+  top: -8%;
+  width: 104vw;
+  height: 34vh;
+  background:
+    radial-gradient(ellipse 58% 74% at 42% 54%, color-mix(in srgb, var(--ql-accent-4) 13%, transparent) 0%, rgba(255, 255, 255, 0.1) 44%, transparent 80%),
+    radial-gradient(ellipse 46% 68% at 72% 48%, color-mix(in srgb, var(--ql-accent-2) 12%, transparent) 0%, transparent 78%);
+  animation-duration: 41s;
+  animation-delay: -17s;
 }
 
 html.ql-theme-active .ql-halo-c {
-  left: 38%;
-  bottom: -34%;
-  width: 56vw;
-  height: 44vw;
-  background: radial-gradient(
-    circle,
-    color-mix(in srgb, var(--ql-accent-3) 13%, #ffffff) 0%,
-    transparent 72%
-  );
+  left: -2%;
+  bottom: -30%;
+  width: 148vw;
+  height: 44vh;
+  background:
+    radial-gradient(ellipse 54% 76% at 34% 54%, color-mix(in srgb, var(--ql-accent) 18%, transparent) 0%, rgba(255, 255, 255, 0.12) 46%, transparent 81%),
+    radial-gradient(ellipse 48% 70% at 74% 48%, color-mix(in srgb, var(--ql-accent-2) 10%, transparent) 0%, transparent 78%);
+  animation-duration: 47s;
+  animation-delay: -31s;
+  animation-direction: alternate-reverse;
 }
 
 html.ql-theme-active .ql-wash {
@@ -306,27 +307,32 @@ html.ql-theme-active .ql-wash {
   filter: blur(84px);
   opacity: calc(var(--ql-glow-alpha) * 0.5);
   transform: rotate(-16deg);
+  animation: ql-drift-b 39s cubic-bezier(0.4, 0.08, 0.6, 0.92) infinite alternate;
+  will-change: transform;
 }
 
 html.ql-theme-active .ql-wash-a {
-  top: 8%;
-  left: 23%;
-  width: 56vw;
-  height: 34vw;
+  top: 29%;
+  left: 5%;
+  width: 112vw;
+  height: 20vh;
   background:
-    radial-gradient(46% 60% at 32% 46%, color-mix(in srgb, var(--ql-accent-2) 22%, transparent), transparent 72%),
-    radial-gradient(48% 58% at 74% 54%, color-mix(in srgb, var(--ql-accent-3) 17%, transparent), transparent 70%);
+    radial-gradient(ellipse 50% 76% at 32% 48%, color-mix(in srgb, var(--ql-accent-2) 12%, transparent) 0%, rgba(255, 255, 255, 0.12) 47%, transparent 82%),
+    radial-gradient(ellipse 48% 72% at 74% 56%, color-mix(in srgb, var(--ql-accent-4) 8%, transparent) 0%, transparent 80%);
 }
 
 html.ql-theme-active .ql-wash-b {
-  right: 7%;
-  bottom: 2%;
-  width: 38vw;
-  height: 27vw;
+  right: -12%;
+  bottom: -4%;
+  width: 92vw;
+  height: 24vh;
   background:
-    radial-gradient(54% 66% at 30% 42%, color-mix(in srgb, var(--ql-accent) 18%, transparent), transparent 72%),
-    radial-gradient(42% 54% at 76% 63%, color-mix(in srgb, var(--ql-accent-3) 14%, transparent), transparent 70%);
-  transform: rotate(19deg);
+    radial-gradient(ellipse 54% 76% at 32% 48%, color-mix(in srgb, var(--ql-accent-3) 11%, transparent) 0%, rgba(255, 255, 255, 0.1) 46%, transparent 81%),
+    radial-gradient(ellipse 48% 70% at 76% 54%, color-mix(in srgb, var(--ql-accent) 11%, transparent) 0%, transparent 80%);
+  transform: rotate(2deg);
+  animation-duration: 32s;
+  animation-delay: -11s;
+  animation-direction: alternate-reverse;
 }
 
 html.ql-theme-active.dark .ql-wash {
@@ -338,9 +344,44 @@ html.ql-theme-active .ql-sheen {
   inset: 0;
   display: block;
   background:
-    linear-gradient(122deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.12) 24%, transparent 48%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 34%);
-  opacity: 0.62;
+    radial-gradient(ellipse 104% 28% at 46% 46%, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.1) 52%, transparent 88%),
+    radial-gradient(ellipse 78% 22% at 74% 63%, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04) 48%, transparent 86%);
+  opacity: 0.76;
+  animation: ql-breathe 27s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes ql-drift-a {
+  0% {
+    transform: translate3d(-1.8%, -1.2%, 0) scale(0.985) rotate(-1.4deg);
+  }
+  44% {
+    transform: translate3d(2.6%, 1.1%, 0) scale(1.035) rotate(0.8deg);
+  }
+  100% {
+    transform: translate3d(1.2%, 2.4%, 0) scale(1.012) rotate(1.8deg);
+  }
+}
+
+@keyframes ql-drift-b {
+  0% {
+    transform: translate3d(-2.2%, 1.2%, 0) scale(0.99) rotate(-1.2deg);
+  }
+  48% {
+    transform: translate3d(2%, -1.4%, 0) scale(1.035) rotate(0.6deg);
+  }
+  100% {
+    transform: translate3d(3.4%, 0.5%, 0) scale(1.012) rotate(1.6deg);
+  }
+}
+
+@keyframes ql-breathe {
+  from {
+    transform: scale(0.985);
+  }
+  to {
+    transform: scale(1.025);
+  }
 }
 
 html.ql-theme-active.dark .ql-halo {
@@ -456,7 +497,7 @@ html.ql-theme-active .sidebar {
   border: 0;
   border-right: 1px solid var(--ql-line);
   border-radius: 0;
-  background: rgba(249, 253, 255, 0.28) !important;
+  background: rgba(252, 254, 255, 0.34) !important;
   box-shadow: none;
   -webkit-backdrop-filter: blur(22px) saturate(128%);
   backdrop-filter: blur(22px) saturate(128%);
@@ -467,13 +508,13 @@ html.ql-theme-active .sidebar-decoration {
   background:
     linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.2),
-      color-mix(in srgb, var(--ql-accent) 6%, transparent) 52%,
-      rgba(255, 255, 255, 0.02)
+      rgba(255, 255, 255, 0.28),
+      color-mix(in srgb, var(--ql-accent) 3%, transparent) 52%,
+      rgba(255, 255, 255, 0.04)
     ),
     radial-gradient(
       100% 56% at 0% 0%,
-      color-mix(in srgb, var(--ql-accent) 10%, transparent),
+      color-mix(in srgb, var(--ql-accent) 5%, transparent),
       transparent 72%
     ) !important;
 }
