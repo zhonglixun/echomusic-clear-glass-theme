@@ -1,0 +1,9 @@
+dist/
+preview/
+MEMORY.md
+node_modules/
+*.zip
+*.log
+.DS_Store
+Thumbs.db
+

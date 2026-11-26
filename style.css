@@ -1,0 +1,2231 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   晴岚 · 清透薄荷青主题
+   所有规则只在 html.ql-theme-active 下生效。
+   设计重心：背景是浅青白连续过渡，面板只是薄薄一层雾白玻璃；
+   不用大面积中性灰，也不靠重阴影制造层级。
+   ───────────────────────────────────────────────────────────────────────── */
+
+html.ql-theme-active {
+  color-scheme: light;
+
+  --ql-accent: #319ca8;
+  --ql-accent-strong: #197d89;
+  --ql-accent-2: #4b93c7;
+  --ql-accent-3: #df9678;
+  --ql-accent-4: #8a70c4;
+  --ql-heart: #d94e68;
+  --ql-star: #c69132;
+  --ql-accent-soft: color-mix(in srgb, var(--ql-accent) 15%, transparent);
+  --ql-accent-haze: color-mix(in srgb, var(--ql-accent) 14%, transparent);
+  --ql-text: #17363d;
+  --ql-muted: #4f696f;
+  --ql-faint: #6e878c;
+  --ql-line: color-mix(in srgb, var(--ql-accent) 20%, transparent);
+  --ql-line-strong: color-mix(in srgb, var(--ql-accent) 32%, transparent);
+  --ql-hairline: color-mix(in srgb, var(--ql-accent) 12%, transparent);
+
+  --ql-surface-alpha: 0.58;
+  --ql-surface-soft: 0.4;
+  --ql-surface-strong: 0.76;
+  --ql-glow-alpha: 0.62;
+  --ql-shadow: 0 12px 36px rgba(54, 119, 128, 0.07);
+  --ql-shadow-tight: 0 5px 16px rgba(54, 119, 128, 0.055);
+  --ql-sheen: inset 0 1px 0 rgba(255, 255, 255, 0.78);
+
+  --radius-control: 10px;
+  --radius-item: 11px;
+  --radius-card: 16px;
+  --radius-media: 10px;
+  --radius-popover: 16px;
+  --radius-tooltip: 10px;
+  --radius-dialog: 20px;
+  --radius-shell: 20px;
+  --radius-detail: 12px;
+  --radius-micro: 7px;
+
+  --color-primary: var(--ql-accent);
+  --color-primary-text: var(--ql-accent-strong);
+  --color-primary-hover: color-mix(in srgb, var(--ql-accent) 86%, #ffffff);
+  --color-primary-pressed: var(--ql-accent-strong);
+  --color-primary-light: var(--ql-accent-haze);
+  --color-on-primary: #ffffff;
+  --color-focus-ring: var(--ql-accent);
+  --color-brand: var(--ql-accent);
+
+  --text-main: var(--ql-text);
+  --color-text-main: var(--ql-text);
+  --text-secondary: var(--ql-muted);
+  --color-text-secondary: var(--ql-muted);
+  --text-placeholder: var(--ql-faint);
+  --icon-secondary: color-mix(in srgb, var(--ql-text) 54%, transparent);
+  --border-light: var(--ql-line);
+  --border-subtle: var(--ql-hairline);
+  --control-border: var(--ql-line);
+  --content-selected-bg: color-mix(in srgb, var(--ql-accent) 16%, transparent);
+  --state-danger: #e2566d;
+  --control-track-bg: color-mix(in srgb, var(--ql-accent) 13%, transparent);
+  --control-thumb-bg: #ffffff;
+  --scrollbar-thumb-bg: rgba(53, 125, 134, 0.16);
+  --scrollbar-thumb-bg-hover: rgba(53, 125, 134, 0.27);
+  --scrollbar-thumb-bg-active: rgba(53, 125, 134, 0.36);
+}
+
+html.ql-theme-active[data-ql-shadow='off'] {
+  --ql-shadow: none;
+  --ql-shadow-tight: none;
+}
+
+html.ql-theme-active.dark {
+  color-scheme: dark;
+
+  --ql-accent: #79d8d2;
+  --ql-accent-strong: #a8f0e8;
+  --ql-heart: #ff829b;
+  --ql-star: #f0c66e;
+  --ql-accent-soft: color-mix(in srgb, var(--ql-accent) 18%, transparent);
+  --ql-accent-haze: color-mix(in srgb, var(--ql-accent) 14%, transparent);
+  --ql-text: #edfafa;
+  --ql-muted: #a5c2c6;
+  --ql-faint: #7f9ca1;
+  --ql-line: color-mix(in srgb, var(--ql-accent) 20%, transparent);
+  --ql-line-strong: color-mix(in srgb, var(--ql-accent) 34%, transparent);
+  --ql-hairline: color-mix(in srgb, var(--ql-accent) 12%, transparent);
+  --ql-surface-alpha: 0.12;
+  --ql-surface-soft: 0.08;
+  --ql-surface-strong: 0.18;
+  --ql-shadow: 0 14px 42px rgba(0, 8, 13, 0.22);
+  --ql-shadow-tight: 0 6px 18px rgba(0, 8, 13, 0.16);
+  --ql-sheen: inset 0 1px 0 rgba(210, 255, 252, 0.08);
+  --scrollbar-thumb-bg: rgba(190, 234, 233, 0.16);
+  --scrollbar-thumb-bg-hover: rgba(190, 234, 233, 0.27);
+  --scrollbar-thumb-bg-active: rgba(190, 234, 233, 0.36);
+  --control-thumb-bg: #eafffd;
+  --content-selected-bg: color-mix(in srgb, var(--ql-accent) 20%, transparent);
+}
+
+/* ── 全局 ─────────────────────────────────────────────────────────────── */
+
+html.ql-theme-active body,
+html.ql-theme-active #app,
+html.ql-theme-active .main-layout,
+html.ql-theme-active .main-content,
+html.ql-theme-active .main-content .bg-bg-main {
+  background: transparent !important;
+}
+
+html.ql-theme-active body,
+html.ql-theme-active #app {
+  color: var(--ql-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.ql-theme-active ::selection {
+  color: var(--ql-text);
+  background: color-mix(in srgb, var(--ql-accent) 24%, transparent);
+}
+
+html.ql-theme-active ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+html.ql-theme-active ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html.ql-theme-active ::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+  background-color: transparent;
+  transition: background-color 180ms ease;
+}
+
+html.ql-theme-active :is(:hover, :focus-within) > ::-webkit-scrollbar-thumb,
+html.ql-theme-active ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-bg);
+}
+
+html.ql-theme-active ::-webkit-scrollbar-thumb:active {
+  background-color: var(--scrollbar-thumb-bg-active);
+}
+
+/* ── 连续背景 ─────────────────────────────────────────────────────────── */
+
+html.ql-theme-active .theme-background-base {
+  background-color: #edf9f8 !important;
+  background-image:
+    radial-gradient(82% 82% at 2% 0%, rgba(116, 220, 215, 0.2) 0%, transparent 68%),
+    radial-gradient(68% 74% at 98% 4%, rgba(163, 208, 246, 0.22) 0%, transparent 70%),
+    linear-gradient(135deg, #e3f6f4 0%, #edf9f8 36%, #f3f8fd 70%, #fcfdff 100%) !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+html.ql-theme-active[data-ql-tint='mint'] .theme-background-base {
+  background-color: #edf8f2 !important;
+  background-image:
+    radial-gradient(42% 54% at 4% 5%, rgba(91, 211, 172, 0.31) 0%, transparent 66%),
+    radial-gradient(38% 44% at 53% -6%, rgba(112, 177, 226, 0.21) 0%, transparent 68%),
+    radial-gradient(43% 48% at 101% 13%, rgba(245, 191, 158, 0.2) 0%, transparent 70%),
+    radial-gradient(42% 48% at 84% 82%, rgba(173, 157, 231, 0.16) 0%, transparent 70%),
+    radial-gradient(58% 60% at 19% 103%, rgba(118, 222, 195, 0.24) 0%, transparent 71%),
+    linear-gradient(134deg, #e4f7ee 0%, #f0fbf6 38%, #f4f9fd 73%, #fefbf7 100%) !important;
+}
+
+html.ql-theme-active[data-ql-tint='sky'] .theme-background-base {
+  background-color: #edf4ff !important;
+  background-image:
+    radial-gradient(43% 55% at 2% 2%, rgba(92, 151, 242, 0.3) 0%, transparent 66%),
+    radial-gradient(39% 46% at 48% -7%, rgba(122, 211, 219, 0.2) 0%, transparent 68%),
+    radial-gradient(44% 49% at 102% 15%, rgba(218, 194, 242, 0.22) 0%, transparent 70%),
+    radial-gradient(42% 48% at 87% 86%, rgba(255, 199, 171, 0.18) 0%, transparent 70%),
+    radial-gradient(58% 60% at 23% 104%, rgba(134, 172, 244, 0.23) 0%, transparent 71%),
+    linear-gradient(134deg, #e1edff 0%, #edf5ff 39%, #f5f8ff 73%, #fffaf7 100%) !important;
+}
+
+/* 快捷卡使用固定功能色：每张卡都有独立颜色，拖动换位后不变。 */
+html.ql-theme-active[data-ql-tint='mint'] {
+  --ql-icon-home: #3f9d86;
+  --ql-icon-explore: #4b8fc8;
+  --ql-icon-free-listen: #3c919f;
+  --ql-icon-discover-flow: #7e79c8;
+  --ql-icon-personal-fm: #c3748d;
+  --ql-icon-recommend: #be735a;
+  --ql-icon-ranking: #6d79c4;
+  --ql-icon-purchased: #609a70;
+  --ql-icon-listen-together: #9678bb;
+}
+
+html.ql-theme-active[data-ql-tint='sky'] {
+  --ql-icon-home: #5386d2;
+  --ql-icon-explore: #6d7bd1;
+  --ql-icon-free-listen: #3f88b4;
+  --ql-icon-discover-flow: #8879d0;
+  --ql-icon-personal-fm: #c6768d;
+  --ql-icon-recommend: #bd7361;
+  --ql-icon-ranking: #7a73d1;
+  --ql-icon-purchased: #7089c2;
+  --ql-icon-listen-together: #987cc5;
+}
+
+html.ql-theme-active.dark[data-ql-tint='mint'] {
+  --ql-icon-home: #7dd7bd;
+  --ql-icon-explore: #8fc6f1;
+  --ql-icon-free-listen: #8fd7df;
+  --ql-icon-discover-flow: #b6b1f0;
+  --ql-icon-personal-fm: #efaec1;
+  --ql-icon-recommend: #f0b79d;
+  --ql-icon-ranking: #beb6f5;
+  --ql-icon-purchased: #9bcba7;
+  --ql-icon-listen-together: #cbb3ee;
+}
+
+html.ql-theme-active.dark[data-ql-tint='sky'] {
+  --ql-icon-home: #91b8f1;
+  --ql-icon-explore: #a6aff1;
+  --ql-icon-free-listen: #95caea;
+  --ql-icon-discover-flow: #b9adf2;
+  --ql-icon-personal-fm: #efafc1;
+  --ql-icon-recommend: #f0b9a7;
+  --ql-icon-ranking: #c3b9f5;
+  --ql-icon-purchased: #adbee8;
+  --ql-icon-listen-together: #cbb4ed;
+}
+
+html.ql-theme-active.dark .theme-background-base {
+  background-color: #0d2027 !important;
+  background-image:
+    radial-gradient(42% 52% at 2% 2%, color-mix(in srgb, var(--ql-accent) 22%, transparent) 0%, transparent 68%),
+    radial-gradient(38% 46% at 56% -6%, color-mix(in srgb, var(--ql-accent-2) 16%, transparent) 0%, transparent 70%),
+    radial-gradient(44% 48% at 102% 78%, color-mix(in srgb, var(--ql-accent-3) 12%, transparent) 0%, transparent 70%),
+    linear-gradient(135deg, #0a1c22 0%, #102830 44%, #142733 74%, #0b1c24 100%) !important;
+}
+
+html.ql-theme-active .main-layout::after,
+html.ql-theme-active .theme-background-base::after {
+  background: none !important;
+}
+
+/* 背景装饰只负责光感，不承载任何信息。 */
+html.ql-theme-active .ql-atmosphere {
+  opacity: 1;
+  z-index: 0;
+}
+
+html.ql-theme-active .ql-halo {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  filter: blur(72px);
+  opacity: var(--ql-glow-alpha);
+  will-change: transform;
+}
+
+html.ql-theme-active .ql-halo-a {
+  top: -26%;
+  left: -8%;
+  width: 48vw;
+  height: 48vw;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--ql-accent) 24%, transparent) 0%,
+    transparent 70%
+  );
+}
+
+html.ql-theme-active .ql-halo-b {
+  right: -10%;
+  top: 6%;
+  width: 42vw;
+  height: 42vw;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--ql-accent-2) 19%, transparent) 0%,
+    transparent 72%
+  );
+}
+
+html.ql-theme-active .ql-halo-c {
+  left: 38%;
+  bottom: -34%;
+  width: 56vw;
+  height: 44vw;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--ql-accent-3) 13%, #ffffff) 0%,
+    transparent 72%
+  );
+}
+
+html.ql-theme-active .ql-wash {
+  position: absolute;
+  display: block;
+  border-radius: 46% 54% 58% 42% / 52% 43% 57% 48%;
+  filter: blur(84px);
+  opacity: calc(var(--ql-glow-alpha) * 0.5);
+  transform: rotate(-16deg);
+}
+
+html.ql-theme-active .ql-wash-a {
+  top: 8%;
+  left: 23%;
+  width: 56vw;
+  height: 34vw;
+  background:
+    radial-gradient(46% 60% at 32% 46%, color-mix(in srgb, var(--ql-accent-2) 22%, transparent), transparent 72%),
+    radial-gradient(48% 58% at 74% 54%, color-mix(in srgb, var(--ql-accent-3) 17%, transparent), transparent 70%);
+}
+
+html.ql-theme-active .ql-wash-b {
+  right: 7%;
+  bottom: 2%;
+  width: 38vw;
+  height: 27vw;
+  background:
+    radial-gradient(54% 66% at 30% 42%, color-mix(in srgb, var(--ql-accent) 18%, transparent), transparent 72%),
+    radial-gradient(42% 54% at 76% 63%, color-mix(in srgb, var(--ql-accent-3) 14%, transparent), transparent 70%);
+  transform: rotate(19deg);
+}
+
+html.ql-theme-active.dark .ql-wash {
+  opacity: calc(var(--ql-glow-alpha) * 0.3);
+}
+
+html.ql-theme-active .ql-sheen {
+  position: absolute;
+  inset: 0;
+  display: block;
+  background:
+    linear-gradient(122deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.12) 24%, transparent 48%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 34%);
+  opacity: 0.62;
+}
+
+html.ql-theme-active.dark .ql-halo {
+  opacity: calc(var(--ql-glow-alpha) * 0.56);
+}
+
+html.ql-theme-active.dark .ql-sheen {
+  opacity: 0.18;
+}
+
+/* ── 外壳与标题栏 ─────────────────────────────────────────────────────── */
+
+html.ql-theme-active .main-content {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+html.ql-theme-active :is(
+    .title-bar,
+    .sliver-header-root,
+    .sliver-header-background,
+    .page-sticky-layer,
+    .explore-header,
+    .rank-toolbar,
+    .new-song-toolbar,
+    .search-song-toolbar,
+    .song-list-sticky,
+    .comment-main-tabs,
+    .search-pinned-tabs
+  ) {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+html.ql-theme-active :is(
+    .sliver-header-root,
+    .song-list-sticky,
+    .explore-header,
+    .rank-toolbar
+  )::before,
+html.ql-theme-active :is(
+    .sliver-header-root,
+    .song-list-sticky,
+    .explore-header,
+    .rank-toolbar
+  )::after {
+  background: transparent !important;
+}
+
+html.ql-theme-active .titlebar-window-divider {
+  background: var(--ql-hairline);
+}
+
+html.ql-theme-active :is(.titlebar-icon-action, .title-bar .action-icon, .window-action) {
+  border-radius: 999px;
+  color: color-mix(in srgb, var(--ql-text) 58%, transparent);
+  transition:
+    color 160ms ease,
+    background-color 160ms ease;
+}
+
+html.ql-theme-active :is(.titlebar-icon-action, .title-bar .action-icon, .window-action):hover:not(:disabled) {
+  color: var(--ql-text);
+  background: rgb(255 255 255 / var(--ql-surface-soft));
+}
+
+/* 搜索框：不要灰胶囊，改成薄雾白 + 青灰内描边。 */
+html.ql-theme-active :is(.tb-search-input-wrap, .search-input-wrap) {
+  border: 1px solid var(--ql-line) !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.46) !important;
+  box-shadow: var(--ql-sheen) !important;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+html.ql-theme-active :is(.tb-search-input-wrap, .search-input-wrap):hover {
+  background: rgba(255, 255, 255, 0.64) !important;
+  border-color: var(--ql-line-strong) !important;
+}
+
+html.ql-theme-active :is(.tb-search-input-wrap, .search-input-wrap):focus-within {
+  background: rgba(255, 255, 255, 0.78) !important;
+  border-color: color-mix(in srgb, var(--ql-accent) 42%, transparent) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ql-accent) 13%, transparent) !important;
+}
+
+html.ql-theme-active :is(.tb-search-input, .search-input, .settings-search-input) {
+  color: var(--ql-text);
+  background: transparent;
+}
+
+html.ql-theme-active :is(.tb-search-input, .search-input, .settings-search-input)::placeholder {
+  color: color-mix(in srgb, var(--ql-text) 38%, transparent);
+}
+
+/* ── 侧栏 ─────────────────────────────────────────────────────────────── */
+
+html.ql-theme-active .sidebar-wrapper,
+html.ql-theme-active .sidebar-full-panel {
+  background: transparent !important;
+}
+
+html.ql-theme-active .sidebar {
+  border: 0;
+  border-right: 1px solid var(--ql-line);
+  border-radius: 0;
+  background: rgba(249, 253, 255, 0.28) !important;
+  box-shadow: none;
+  -webkit-backdrop-filter: blur(22px) saturate(128%);
+  backdrop-filter: blur(22px) saturate(128%);
+}
+
+html.ql-theme-active .sidebar-decoration {
+  opacity: 1 !important;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.2),
+      color-mix(in srgb, var(--ql-accent) 6%, transparent) 52%,
+      rgba(255, 255, 255, 0.02)
+    ),
+    radial-gradient(
+      100% 56% at 0% 0%,
+      color-mix(in srgb, var(--ql-accent) 10%, transparent),
+      transparent 72%
+    ) !important;
+}
+
+html.ql-theme-active .sidebar.is-rail {
+  border-right-color: var(--ql-hairline);
+}
+
+html.ql-theme-active .user-info-card,
+html.ql-theme-active .shortcut-card,
+html.ql-theme-active .shortcut-add {
+  border: 1px solid var(--ql-line) !important;
+  border-radius: 14px !important;
+  background: rgb(255 255 255 / var(--ql-surface-alpha)) !important;
+  box-shadow: var(--ql-shadow-tight), var(--ql-sheen) !important;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+html.ql-theme-active .user-info-card:hover,
+html.ql-theme-active .shortcut-card:hover,
+html.ql-theme-active .shortcut-add:hover {
+  border-color: var(--ql-line-strong) !important;
+  background: rgb(255 255 255 / var(--ql-surface-strong)) !important;
+}
+
+html.ql-theme-active .shortcut-card.prism-tile-active,
+html.ql-theme-active .shortcut-card.is-active,
+html.ql-theme-active .shortcut-card[aria-current='page'] {
+  border-color: color-mix(in srgb, var(--ql-accent) 34%, transparent) !important;
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--ql-accent) 17%, #ffffff),
+    color-mix(in srgb, var(--ql-accent) 8%, #ffffff)
+  ) !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active .shortcut-add {
+  border-style: dashed !important;
+  border-color: color-mix(in srgb, var(--ql-accent) 38%, transparent) !important;
+  background: color-mix(in srgb, var(--ql-accent) 9%, transparent) !important;
+  color: var(--ql-accent-strong) !important;
+}
+
+html.ql-theme-active :is(.sidebar-nav-item, .sidebar-library-item, .sidebar-rail-item) {
+  border-radius: 11px;
+  color: var(--ql-muted);
+}
+
+html.ql-theme-active :is(.sidebar-nav-item, .sidebar-library-item, .sidebar-rail-item):hover {
+  color: var(--ql-text) !important;
+  background: color-mix(in srgb, var(--ql-accent) 14%, rgba(255, 255, 255, 0.24)) !important;
+}
+
+html.ql-theme-active :is(
+    .sidebar-nav-item.is-active,
+    .sidebar-library-item.is-active,
+    .sidebar-nav-item[aria-current='page'],
+    .sidebar-library-item[aria-current='page'],
+    .sidebar-rail-item.is-active
+  ) {
+  color: var(--ql-accent-strong) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active :is(.sidebar-account-divider, .sidebar-playlist-divider, .sidebar-tab-divider) {
+  background: var(--ql-hairline) !important;
+}
+
+html.ql-theme-active :is(
+    .sidebar-section-action,
+    .sidebar-icon-btn,
+    .sidebar-playlist-action,
+    .account-trigger,
+    .sidebar-settings-btn,
+    .sidebar-app-tools .sidebar-app-tool,
+    .sidebar-rail-bottom .sidebar-app-tool
+  ) {
+  color: var(--ql-muted);
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: none;
+}
+
+html.ql-theme-active :is(
+    .sidebar-section-action,
+    .sidebar-icon-btn,
+    .sidebar-playlist-action,
+    .account-trigger,
+    .sidebar-settings-btn,
+    .sidebar-app-tools .sidebar-app-tool,
+    .sidebar-rail-bottom .sidebar-app-tool
+  ):hover {
+  color: var(--ql-text);
+  background: rgb(255 255 255 / var(--ql-surface-soft));
+}
+
+html.ql-theme-active .sidebar-section-header,
+html.ql-theme-active .sidebar-section-title {
+  color: color-mix(in srgb, var(--ql-text) 45%, transparent);
+  letter-spacing: 0.08em;
+}
+
+/* ── 首页 ─────────────────────────────────────────────────────────────── */
+
+html.ql-theme-active .home-header > div:first-child {
+  color: var(--ql-text);
+  letter-spacing: -0.025em;
+}
+
+html.ql-theme-active .home-header > div:last-child {
+  color: var(--ql-muted);
+}
+
+html.ql-theme-active .home-feature-card {
+  border: 1px solid var(--ql-line) !important;
+  border-radius: 16px !important;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.32),
+      color-mix(in srgb, var(--ql-accent) 9%, transparent)
+    ),
+    rgb(255 255 255 / var(--ql-surface-alpha)) !important;
+  box-shadow: var(--ql-shadow-tight), var(--ql-sheen) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(125%);
+  backdrop-filter: blur(16px) saturate(125%);
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+html.ql-theme-active .home-feature-card:hover {
+  border-color: var(--ql-line-strong) !important;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.48),
+      color-mix(in srgb, var(--ql-accent) 12%, transparent)
+    ),
+    rgb(255 255 255 / var(--ql-surface-strong)) !important;
+  box-shadow: var(--ql-shadow-tight) !important;
+  transform: translateY(-1px);
+}
+
+html.ql-theme-active .feature-icon {
+  border: 1px solid rgba(255, 255, 255, 0.62) !important;
+  border-radius: 14px !important;
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--ql-accent) 86%, #ffffff),
+    color-mix(in srgb, var(--ql-accent) 66%, #ffffff)
+  ) !important;
+  color: #ffffff !important;
+  box-shadow: 0 7px 18px color-mix(in srgb, var(--ql-accent) 18%, transparent) !important;
+}
+
+html.ql-theme-active .feature-title {
+  color: var(--ql-text);
+}
+
+html.ql-theme-active .feature-sub {
+  color: var(--ql-muted);
+}
+
+html.ql-theme-active .feature-action {
+  border: 1px solid var(--ql-line) !important;
+  background: rgba(255, 255, 255, 0.4) !important;
+  color: var(--ql-accent-strong) !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active .section-title {
+  color: var(--ql-text);
+  letter-spacing: -0.018em;
+}
+
+html.ql-theme-active .section-title::before {
+  width: 6px;
+  height: 6px;
+  margin-right: 9px;
+  border-radius: 999px;
+  vertical-align: 2px;
+  background: var(--ql-accent);
+  box-shadow: none;
+}
+
+html.ql-theme-active .style-recommend-panel {
+  border: 1px solid var(--ql-line) !important;
+  border-radius: 18px !important;
+  background: rgb(255 255 255 / var(--ql-surface-soft)) !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active .style-panel-label {
+  color: var(--ql-muted);
+}
+
+html.ql-theme-active .style-tag-btn {
+  border: 1px solid transparent !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.36) !important;
+  color: var(--ql-muted) !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active .style-tag-btn:hover {
+  color: var(--ql-text) !important;
+  background: rgba(255, 255, 255, 0.64) !important;
+}
+
+html.ql-theme-active .style-tag-btn.active {
+  color: var(--ql-accent-strong) !important;
+  border-color: color-mix(in srgb, var(--ql-accent) 20%, transparent) !important;
+  background: color-mix(in srgb, var(--ql-accent) 16%, transparent) !important;
+}
+
+html.ql-theme-active .style-recommend-panel .song-card {
+  border: 1px solid transparent !important;
+  border-radius: 13px !important;
+  background: transparent !important;
+}
+
+html.ql-theme-active .style-recommend-panel .song-card:hover {
+  border-color: var(--ql-line) !important;
+  background: rgba(255, 255, 255, 0.38) !important;
+}
+
+html.ql-theme-active :is(.card-container, .ranking-card, .mv-source-card, .plugin-card, .detail-section, .comment-composer) {
+  border: 1px solid var(--ql-line) !important;
+  border-radius: 16px !important;
+  background: rgb(255 255 255 / var(--ql-surface-soft)) !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active :is(.card-container, .ranking-card, .mv-source-card, .plugin-card, .detail-section):hover {
+  border-color: var(--ql-line-strong) !important;
+  background: rgb(255 255 255 / var(--ql-surface-alpha)) !important;
+  box-shadow: var(--ql-shadow-tight) !important;
+}
+
+/* 详情标签页的内外间距：普通和 plain 两种容器都保持 20px 呼吸空间。 */
+html.ql-theme-active :is(.detail-section, .detail-section--plain) {
+  padding: 20px 22px !important;
+}
+
+html.ql-theme-active .detail-section {
+  margin-top: 12px !important;
+}
+
+html.ql-theme-active .detail-block + .detail-block {
+  margin-top: 18px !important;
+}
+
+/* 主题专属设置：去掉默认三角和多重横线，跟宿主抽屉用同一套呼吸节奏。 */
+html.ql-theme-active .theme-plugin-settings {
+  margin-top: 10px !important;
+  border-top: 0 !important;
+}
+
+html.ql-theme-active .theme-plugin-settings > summary {
+  display: none !important;
+}
+
+html.ql-theme-active .theme-plugin-settings > summary::-webkit-details-marker {
+  display: none !important;
+}
+
+html.ql-theme-active .theme-plugin-settings > summary::before {
+  content: "";
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid var(--ql-muted);
+  border-bottom: 1.5px solid var(--ql-muted);
+  transform: rotate(-45deg);
+  transition: transform 160ms ease;
+}
+
+html.ql-theme-active .theme-plugin-settings[open] > summary::before {
+  transform: rotate(45deg);
+}
+
+html.ql-theme-active .theme-plugin-settings-body {
+  display: block !important;
+  gap: 0 !important;
+}
+
+html.ql-theme-active .ql-theme-switch {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 8px;
+  min-width: 64px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ql-muted);
+  font: inherit;
+  cursor: pointer;
+}
+
+html.ql-theme-active .ql-theme-switch-track {
+  position: relative;
+  display: block;
+  width: 38px;
+  height: 22px;
+  border: 1px solid var(--ql-line-strong);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ql-muted) 14%, transparent);
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+html.ql-theme-active .ql-theme-switch-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(22, 54, 61, 0.22);
+  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html.ql-theme-active .ql-theme-switch-state {
+  min-width: 12px;
+  color: var(--ql-muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  text-align: left;
+}
+
+html.ql-theme-active .ql-theme-switch[aria-checked='true'] .ql-theme-switch-track {
+  border-color: color-mix(in srgb, var(--ql-accent) 42%, transparent);
+  background:
+    linear-gradient(
+      135deg,
+      var(--ql-accent-strong),
+      color-mix(in srgb, var(--ql-accent) 68%, var(--ql-accent-2))
+    );
+}
+
+html.ql-theme-active .ql-theme-switch[aria-checked='true'] .ql-theme-switch-knob {
+  transform: translateX(16px);
+}
+
+html.ql-theme-active .ql-theme-switch[aria-checked='true'] .ql-theme-switch-state {
+  color: var(--ql-accent-strong);
+}
+
+html.ql-theme-active .ql-theme-switch:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--ql-accent) 72%, #ffffff);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+html.ql-theme-active .ql-theme-switch:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+}
+
+html.ql-theme-active :is(.card-container .title, .detail-title, .song-title) {
+  color: var(--ql-text);
+}
+
+html.ql-theme-active :is(.card-container .subtitle, .detail-summary, .detail-count, .song-subline, .song-list-meta-link) {
+  color: var(--ql-muted);
+}
+
+html.ql-theme-active .cover-wrapper,
+html.ql-theme-active .cover-container {
+  box-shadow: 0 8px 20px rgba(49, 105, 112, 0.11) !important;
+}
+
+/* ── 列表与标签页 ─────────────────────────────────────────────────────── */
+
+html.ql-theme-active .song-list-row {
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  background: transparent;
+  transition: background-color 150ms ease;
+}
+
+html.ql-theme-active .song-list-row:hover {
+  background: rgba(255, 255, 255, 0.4) !important;
+}
+
+html.ql-theme-active .song-list-row.is-active {
+  background: color-mix(in srgb, var(--ql-accent) 16%, transparent) !important;
+  box-shadow: inset 3px 0 0 var(--ql-accent) !important;
+}
+
+html.ql-theme-active .song-list-row.is-active .song-title {
+  color: var(--ql-accent-strong) !important;
+}
+
+html.ql-theme-active .song-list-row .cover-container,
+html.ql-theme-active .song-list-row img.cover-img {
+  border-radius: 9px !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active .song-actions .action-icon {
+  border-radius: 999px;
+  color: var(--ql-muted);
+}
+
+html.ql-theme-active .song-actions .action-icon:hover {
+  color: var(--ql-text);
+  background: rgba(255, 255, 255, 0.54);
+}
+
+html.ql-theme-active :is(.miuix-tab .tab-trigger, .miuix-tabs-list .tab-trigger, .favorites-tab-list .tab-trigger) {
+  color: var(--ql-muted);
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active :is(.miuix-tab .tab-trigger, .miuix-tabs-list .tab-trigger, .favorites-tab-list .tab-trigger)[aria-selected='true'],
+html.ql-theme-active :is(.miuix-tab .tab-trigger, .miuix-tabs-list .tab-trigger, .favorites-tab-list .tab-trigger).is-active {
+  color: var(--ql-accent-strong);
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* 收藏页 Tab 只使用文字与下划线，不再给整组或单个 Tab 套按钮框。 */
+html.ql-theme-active .favorites-tab-list {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active .favorites-tab-list .tab-trigger:hover {
+  color: var(--ql-text);
+  background: transparent !important;
+}
+
+html.ql-theme-active :is(.comment-item, .batch-row, .mini-queue-item) {
+  border-radius: 11px !important;
+}
+
+html.ql-theme-active :is(.batch-row:not(.is-selected), .mini-queue-item):hover {
+  background: rgba(255, 255, 255, 0.33) !important;
+}
+
+html.ql-theme-active .batch-row.is-selected {
+  background: var(--content-selected-bg) !important;
+}
+
+/* 评论保持静态卡片：每条都有同样的背景与描边，hover 不再改变。 */
+html.ql-theme-active .comment-item,
+html.ql-theme-active .comment-item:hover,
+html.ql-theme-active .comment-item:focus,
+html.ql-theme-active .comment-item:focus-within,
+html.ql-theme-active .comment-item:active {
+  border: 1px solid var(--ql-line) !important;
+  border-radius: 14px !important;
+  background-color: rgb(255 255 255 / var(--ql-surface-soft)) !important;
+  background-image:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--ql-accent) 4%, transparent),
+      transparent 52%
+    ),
+    radial-gradient(
+      100% 120% at 100% 100%,
+      color-mix(in srgb, var(--ql-accent-2) 4%, transparent),
+      transparent 62%
+    ) !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* ── 按钮、输入与浮层 ─────────────────────────────────────────────────── */
+
+html.ql-theme-active .echo-button-solid-primary {
+  border: 1px solid rgba(255, 255, 255, 0.44) !important;
+  border-radius: 999px !important;
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--ql-accent) 92%, #ffffff),
+    var(--ql-accent-strong)
+  ) !important;
+  color: #ffffff !important;
+  box-shadow: 0 7px 18px color-mix(in srgb, var(--ql-accent) 15%, transparent) !important;
+}
+
+/* 所有 primary / soft-primary 操作统一为同一颗实色主按钮。 */
+html.ql-theme-active :is(
+    .soft-accent-action,
+    .echo-button-primary,
+    .echo-button-soft-primary,
+    .action-btn.primary,
+    .batch-action.primary,
+    .settings-action-primary,
+    .style-play-btn
+  ) {
+  color: #ffffff !important;
+  border: 1px solid color-mix(in srgb, var(--ql-accent) 76%, #ffffff) !important;
+  border-radius: 999px !important;
+  background-color: var(--ql-accent) !important;
+  background-image: none !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 6px 16px color-mix(in srgb, var(--ql-accent) 20%, transparent) !important;
+}
+
+html.ql-theme-active :is(
+    .soft-accent-action,
+    .echo-button-primary,
+    .echo-button-soft-primary,
+    .action-btn.primary,
+    .batch-action.primary,
+    .settings-action-primary,
+    .style-play-btn
+  ):hover:not(:disabled) {
+  color: #ffffff !important;
+  border-color: color-mix(in srgb, var(--ql-accent) 82%, #ffffff) !important;
+  background-color: color-mix(in srgb, var(--ql-accent) 90%, #0d2a38) !important;
+  background-image: none !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 7px 19px color-mix(in srgb, var(--ql-accent) 24%, transparent) !important;
+}
+
+html.ql-theme-active :is(
+    .soft-accent-action,
+    .echo-button-primary,
+    .echo-button-soft-primary,
+    .action-btn.primary,
+    .batch-action.primary,
+    .settings-action-primary,
+    .style-play-btn
+  ):active:not(:disabled) {
+  background-color: color-mix(in srgb, var(--ql-accent) 82%, #0d2a38) !important;
+  background-image: none !important;
+  box-shadow:
+    inset 0 1px 2px rgba(15, 42, 56, 0.2),
+    0 3px 10px color-mix(in srgb, var(--ql-accent) 16%, transparent) !important;
+}
+
+html.ql-theme-active :is(
+    .echo-button-secondary,
+    .echo-button-outline,
+    .soft-neutral-action,
+    .soft-secondary-action,
+    .action-btn.secondary
+  ) {
+  border: 1px solid var(--ql-line) !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.44) !important;
+  color: var(--ql-text) !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active .echo-button-ghost {
+  color: var(--ql-muted);
+}
+
+html.ql-theme-active .echo-button-ghost:hover:enabled {
+  color: var(--ql-text);
+  background: rgba(255, 255, 255, 0.44);
+}
+
+html.ql-theme-active :is(
+    .settings-input,
+    .echo-input,
+    .echo-input-control,
+    .song-search-input,
+    .shortcut-input
+  ) {
+  border: 1px solid var(--ql-line) !important;
+  border-radius: 10px !important;
+  background: rgba(255, 255, 255, 0.4) !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active :is(
+    .settings-input,
+    .echo-input,
+    .song-search-input,
+    .shortcut-input
+  ):focus {
+  border-color: color-mix(in srgb, var(--ql-accent) 44%, transparent) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ql-accent) 11%, transparent) !important;
+}
+
+html.ql-theme-active :is(
+    .titlebar-more-menu,
+    .tb-search-panel,
+    .tb-suggestions,
+    .search-suggestions-panel,
+    .sidebar-create-menu,
+    .toast-card
+  ) {
+  border: 1px solid var(--ql-line) !important;
+  border-radius: 15px !important;
+  background: rgba(251, 255, 255, 0.82) !important;
+  box-shadow: 0 18px 50px rgba(35, 93, 101, 0.12) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(135%);
+  backdrop-filter: blur(28px) saturate(135%);
+}
+
+html.ql-theme-active :is(
+    .titlebar-more-item,
+    .tb-suggest-item,
+    .sidebar-create-menu-item
+  ):hover,
+html.ql-theme-active .tb-suggest-item.is-active {
+  background: color-mix(in srgb, var(--ql-accent) 15%, transparent) !important;
+}
+
+/* ── 播放条 ───────────────────────────────────────────────────────────── */
+
+html.ql-theme-active .player-bar-container {
+  border: 1px solid rgba(255, 255, 255, 0.64) !important;
+  border-radius: 20px !important;
+  background: rgba(249, 253, 255, 0.58) !important;
+  box-shadow: 0 14px 34px rgba(37, 93, 102, 0.11) !important;
+  -webkit-backdrop-filter: blur(26px) saturate(132%);
+  backdrop-filter: blur(26px) saturate(132%);
+  overflow: hidden;
+}
+
+html.ql-theme-active .player-bar {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active .player-bar-container::before {
+  opacity: 0.24 !important;
+  background:
+    radial-gradient(
+      240px circle at 12% 80%,
+      color-mix(in srgb, var(--ql-accent) 24%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      220px circle at 88% 22%,
+      color-mix(in srgb, var(--ql-accent) 16%, transparent),
+      transparent 72%
+    ) !important;
+  filter: blur(42px) !important;
+}
+
+html.ql-theme-active .player-bar-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.84);
+}
+
+html.ql-theme-active .player-bar .player-song-info span:first-child {
+  color: var(--ql-text);
+}
+
+html.ql-theme-active .player-bar .player-song-info span {
+  color: var(--ql-muted);
+}
+
+html.ql-theme-active .player-bar .echo-slider-track {
+  background: rgba(52, 130, 138, 0.14) !important;
+}
+
+html.ql-theme-active .echo-slider-thumb {
+  border-color: #ffffff !important;
+  background: var(--ql-accent) !important;
+}
+
+/* ── 深色补齐 ─────────────────────────────────────────────────────────── */
+
+html.ql-theme-active.dark .sidebar {
+  background: rgba(10, 29, 35, 0.34) !important;
+  border-right-color: var(--ql-line);
+}
+
+html.ql-theme-active.dark .sidebar-decoration {
+  background:
+    linear-gradient(180deg, rgba(29, 61, 68, 0.24), rgba(12, 35, 41, 0.08)),
+    radial-gradient(
+      100% 56% at 0% 0%,
+      color-mix(in srgb, var(--ql-accent) 10%, transparent),
+      transparent 72%
+    ) !important;
+}
+
+html.ql-theme-active.dark .user-info-card,
+html.ql-theme-active.dark .shortcut-card,
+html.ql-theme-active.dark .shortcut-add,
+html.ql-theme-active.dark .home-feature-card,
+html.ql-theme-active.dark .style-recommend-panel,
+html.ql-theme-active.dark :is(.card-container, .ranking-card, .mv-source-card, .plugin-card, .detail-section, .comment-composer) {
+  background: rgb(255 255 255 / var(--ql-surface-alpha)) !important;
+  border-color: var(--ql-line) !important;
+}
+
+html.ql-theme-active.dark .shortcut-card.prism-tile-active,
+html.ql-theme-active.dark .shortcut-card.is-active,
+html.ql-theme-active.dark .shortcut-card[aria-current='page'],
+html.ql-theme-active.dark .style-tag-btn.active,
+html.ql-theme-active.dark .song-list-row.is-active {
+  background: color-mix(in srgb, var(--ql-accent) 18%, transparent) !important;
+  color: var(--ql-text) !important;
+}
+
+html.ql-theme-active.dark .style-tag-btn {
+  background: rgba(255, 255, 255, 0.055) !important;
+}
+
+html.ql-theme-active.dark .style-tag-btn:hover {
+  background: rgba(255, 255, 255, 0.095) !important;
+}
+
+html.ql-theme-active.dark :is(.tb-search-input-wrap, .search-input-wrap) {
+  background: rgba(255, 255, 255, 0.07) !important;
+}
+
+html.ql-theme-active.dark :is(
+    .titlebar-more-menu,
+    .tb-search-panel,
+    .tb-suggestions,
+    .search-suggestions-panel,
+    .sidebar-create-menu,
+    .toast-card
+  ) {
+  background: rgba(18, 45, 52, 0.88) !important;
+}
+
+html.ql-theme-active.dark .player-bar-container {
+  background: rgba(18, 45, 52, 0.68) !important;
+  border-color: rgba(185, 240, 236, 0.12) !important;
+  box-shadow: 0 14px 38px rgba(0, 8, 13, 0.26) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   V2 统一设计语言
+   背景是多色雾团；卡片共用同一套透光材质，但在不同区块换用第二／第三强调色。
+   ───────────────────────────────────────────────────────────────────────── */
+
+html.ql-theme-active {
+  --ql-card-line: color-mix(in srgb, var(--ql-accent) 17%, rgba(255, 255, 255, 0.54));
+  --ql-card-wash-a: color-mix(in srgb, var(--ql-accent) 6%, transparent);
+  --ql-card-wash-b: color-mix(in srgb, var(--ql-accent-2) 4%, transparent);
+}
+
+html.ql-theme-active :is(
+    .home-feature-card,
+    .style-recommend-panel,
+    .card-container,
+    .plugin-card,
+    .ranking-card,
+    .mv-source-card,
+    .detail-section,
+    .comment-composer,
+    .settings-card,
+    .plugin-settings-section,
+    .login-panel-card,
+    .profile-archive-card,
+    .cloud-info-card
+  ) {
+  position: relative;
+  border-color: var(--ql-card-line) !important;
+  background:
+    radial-gradient(115% 135% at 0% 0%, var(--ql-card-wash-a), transparent 56%),
+    radial-gradient(105% 125% at 100% 100%, var(--ql-card-wash-b), transparent 60%),
+    linear-gradient(150deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.34)) !important;
+  box-shadow:
+    0 10px 30px rgba(36, 88, 96, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(118%);
+  backdrop-filter: blur(18px) saturate(118%);
+}
+
+html.ql-theme-active .home-feature-card {
+  --ql-card-wash-a: color-mix(in srgb, var(--ql-accent) 11%, transparent);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+html.ql-theme-active .home-feature-card:nth-child(2) {
+  --ql-card-wash-a: color-mix(in srgb, var(--ql-accent-2) 10%, transparent);
+  --ql-card-wash-b: color-mix(in srgb, var(--ql-accent-3) 4%, transparent);
+}
+
+html.ql-theme-active .home-feature-card::after {
+  content: "";
+  position: absolute;
+  top: -52px;
+  right: -36px;
+  width: 150px;
+  height: 150px;
+  border-radius: 48% 52% 61% 39%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--ql-accent-2) 18%, transparent),
+    transparent 68%
+  );
+  filter: blur(20px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+html.ql-theme-active .home-feature-card:nth-child(2)::after {
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--ql-accent-3) 22%, transparent),
+    transparent 68%
+  );
+}
+
+html.ql-theme-active .home-feature-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-content='on'] .home-feature-card .feature-icon.gradient-secondary {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--ql-icon-ranking) 86%, #ffffff),
+    color-mix(in srgb, var(--ql-icon-ranking) 62%, #ffffff)
+  ) !important;
+  box-shadow: 0 7px 18px color-mix(in srgb, var(--ql-icon-ranking) 17%, transparent) !important;
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-content='on'] .home-feature-card:has(.feature-icon.gradient-secondary) .feature-action {
+  color: var(--ql-icon-ranking) !important;
+}
+
+html.ql-theme-active .home-section:nth-child(3n + 2) .section-title::before {
+  background: var(--ql-accent-2);
+}
+
+html.ql-theme-active .home-section:nth-child(3n) .section-title::before {
+  background: var(--ql-accent-3);
+}
+
+html.ql-theme-active :is(
+    .sliver-header-shell .cover-container,
+    .sliver-header-root .cover-container
+  ) {
+  border-radius: 18px !important;
+  box-shadow:
+    0 14px 34px color-mix(in srgb, var(--ql-accent) 14%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58) !important;
+}
+
+html.ql-theme-active .shortcut-grid > .shortcut-card:nth-child(2n) {
+  --ql-card-wash-a: color-mix(in srgb, var(--ql-accent-2) 9%, transparent);
+  --ql-card-wash-b: transparent;
+}
+
+html.ql-theme-active .shortcut-grid > .shortcut-card:nth-child(3n) {
+  --ql-card-wash-a: color-mix(in srgb, var(--ql-accent-3) 6%, transparent);
+}
+
+/* 快捷卡按稳定功能 key 配色，拖动换位后颜色不变。 */
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-shortcuts='on'] .shortcut-card[data-shortcut-key='home'] {
+  --ql-shortcut-icon: var(--ql-icon-home);
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-shortcuts='on'] .shortcut-card[data-shortcut-key='explore'] {
+  --ql-shortcut-icon: var(--ql-icon-explore);
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-shortcuts='on'] .shortcut-card[data-shortcut-key='free-listen'] {
+  --ql-shortcut-icon: var(--ql-icon-free-listen);
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-shortcuts='on'] .shortcut-card[data-shortcut-key='discover-flow'] {
+  --ql-shortcut-icon: var(--ql-icon-discover-flow);
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-shortcuts='on'] .shortcut-card[data-shortcut-key='personal-fm'] {
+  --ql-shortcut-icon: var(--ql-icon-personal-fm);
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-shortcuts='on'] .shortcut-card[data-shortcut-key='recommend'] {
+  --ql-shortcut-icon: var(--ql-icon-recommend);
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-shortcuts='on'] .shortcut-card[data-shortcut-key='ranking'] {
+  --ql-shortcut-icon: var(--ql-icon-ranking);
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-shortcuts='on'] .shortcut-card[data-shortcut-key='purchased'] {
+  --ql-shortcut-icon: var(--ql-icon-purchased);
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-shortcuts='on'] .shortcut-card[data-shortcut-key='listen-together'] {
+  --ql-shortcut-icon: var(--ql-icon-listen-together);
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-shortcuts='on'] :is(
+    .shortcut-card[data-shortcut-key='home'],
+    .shortcut-card[data-shortcut-key='explore'],
+    .shortcut-card[data-shortcut-key='free-listen'],
+    .shortcut-card[data-shortcut-key='discover-flow'],
+    .shortcut-card[data-shortcut-key='personal-fm'],
+    .shortcut-card[data-shortcut-key='recommend'],
+    .shortcut-card[data-shortcut-key='ranking'],
+    .shortcut-card[data-shortcut-key='purchased'],
+    .shortcut-card[data-shortcut-key='listen-together']
+  ) .shortcut-icon {
+  color: var(--ql-shortcut-icon, var(--ql-accent)) !important;
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-shortcuts='on'] .shortcut-add svg {
+  color: var(--ql-accent-2) !important;
+}
+
+html.ql-theme-active .plugin-card {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+html.ql-theme-active .plugin-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 16px;
+  right: 16px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--ql-accent) 55%, transparent),
+    color-mix(in srgb, var(--ql-accent-2) 42%, transparent),
+    transparent
+  );
+  pointer-events: none;
+}
+
+html.ql-theme-active .plugin-header {
+  border-bottom-color: var(--ql-line) !important;
+  background:
+    linear-gradient(
+      110deg,
+      color-mix(in srgb, var(--ql-accent) 5%, transparent),
+      transparent 38%,
+      color-mix(in srgb, var(--ql-accent-2) 4%, transparent)
+    ) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(118%);
+  backdrop-filter: blur(18px) saturate(118%);
+}
+
+html.ql-theme-active .plugin-card > * {
+  position: relative;
+}
+
+html.ql-theme-active .card-container {
+  --ql-card-wash-a: color-mix(in srgb, var(--ql-accent) 4%, transparent);
+}
+
+html.ql-theme-active :is(
+    .playlist-card-grid > :nth-child(3n + 2) .card-container,
+    .album-card:nth-child(3n + 2) .card-container,
+    .artist-card:nth-child(3n + 2) .card-container
+  ) {
+  --ql-card-wash-a: color-mix(in srgb, var(--ql-accent-2) 6%, transparent);
+}
+
+html.ql-theme-active :is(
+    .playlist-card-grid > :nth-child(3n) .card-container,
+    .album-card:nth-child(3n) .card-container,
+    .artist-card:nth-child(3n) .card-container
+  ) {
+  --ql-card-wash-a: color-mix(in srgb, var(--ql-accent-3) 5%, transparent);
+}
+
+html.ql-theme-active .comment-item {
+  --ql-card-wash-a: color-mix(in srgb, var(--ql-accent) 4%, transparent);
+  --ql-card-wash-b: color-mix(in srgb, var(--ql-accent-2) 3%, transparent);
+}
+
+html.ql-theme-active .detail-section {
+  background:
+    radial-gradient(100% 130% at 0% 0%, color-mix(in srgb, var(--ql-accent) 7%, transparent), transparent 55%),
+    radial-gradient(90% 120% at 100% 100%, color-mix(in srgb, var(--ql-accent-2) 5%, transparent), transparent 58%),
+    linear-gradient(150deg, rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0.38)) !important;
+}
+
+html.ql-theme-active :is(
+    .drawer-panel,
+    .dialog-content,
+    .echo-popover-content,
+    .song-context-menu,
+    .theme-adjustments-drawer,
+    .titlebar-more-menu,
+    .tb-search-panel,
+    .toast-card
+  ) {
+  border: 1px solid rgba(255, 255, 255, 0.76) !important;
+  background:
+    radial-gradient(120% 110% at 0% 0%, color-mix(in srgb, var(--ql-accent) 8%, transparent), transparent 52%),
+    radial-gradient(105% 100% at 100% 100%, color-mix(in srgb, var(--ql-accent-2) 6%, transparent), transparent 58%),
+    rgba(250, 254, 255, 0.88) !important;
+  box-shadow: 0 24px 60px rgba(28, 75, 85, 0.14) !important;
+  -webkit-backdrop-filter: blur(30px) saturate(126%);
+  backdrop-filter: blur(30px) saturate(126%);
+}
+
+html.ql-theme-active .theme-adjustments-drawer :is(
+    .theme-drawer-heading,
+    .theme-drawer-footer,
+    .theme-plugin-settings
+  ) {
+  border-color: var(--ql-line) !important;
+}
+
+html.ql-theme-active :is(
+    .plugin-safe-mode-control,
+    .grant-row,
+    .plugin-source-row,
+    .settings-input,
+    .echo-input,
+    .song-search-input,
+    .shortcut-input
+  ) {
+  border-color: var(--ql-card-line) !important;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0.3)) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7) !important;
+}
+
+html.ql-theme-active .favorites-tab-list .tab-trigger .active-line {
+  background: linear-gradient(90deg, var(--ql-accent), var(--ql-accent-2)) !important;
+  box-shadow: 0 2px 9px color-mix(in srgb, var(--ql-accent) 28%, transparent);
+}
+
+html.ql-theme-active .style-tag-btn.active {
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--ql-accent) 15%, transparent),
+      color-mix(in srgb, var(--ql-accent-2) 10%, transparent)
+    ) !important;
+}
+
+html.ql-theme-active .song-list-row.is-active {
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--ql-accent) 16%, transparent),
+      color-mix(in srgb, var(--ql-accent-2) 7%, transparent)
+    ) !important;
+}
+
+html.ql-theme-active .echo-button-solid-primary {
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--ql-accent) 92%, #ffffff),
+      color-mix(in srgb, var(--ql-accent-2) 34%, var(--ql-accent)),
+      var(--ql-accent-strong)
+    ) !important;
+}
+
+html.ql-theme-active .player-bar-container {
+  background:
+    radial-gradient(48% 180% at 4% 50%, color-mix(in srgb, var(--ql-accent) 10%, transparent), transparent 70%),
+    radial-gradient(38% 170% at 96% 50%, color-mix(in srgb, var(--ql-accent-2) 8%, transparent), transparent 72%),
+    rgba(249, 253, 255, 0.64) !important;
+}
+
+html.ql-theme-active.dark :is(
+    .home-feature-card,
+    .style-recommend-panel,
+    .card-container,
+    .plugin-card,
+    .ranking-card,
+    .mv-source-card,
+    .detail-section,
+    .comment-composer,
+    .settings-card,
+    .plugin-settings-section,
+    .login-panel-card,
+    .profile-archive-card,
+    .cloud-info-card
+  ) {
+  background:
+    radial-gradient(120% 130% at 0% 0%, color-mix(in srgb, var(--ql-accent) 8%, transparent), transparent 56%),
+    radial-gradient(100% 120% at 100% 100%, color-mix(in srgb, var(--ql-accent-2) 5%, transparent), transparent 60%),
+    linear-gradient(150deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.035)) !important;
+  border-color: var(--ql-line) !important;
+  box-shadow:
+    0 14px 34px rgba(0, 7, 12, 0.2),
+    inset 0 1px 0 rgba(216, 255, 252, 0.075) !important;
+}
+
+html.ql-theme-active.dark :is(
+    .drawer-panel,
+    .dialog-content,
+    .echo-popover-content,
+    .song-context-menu,
+    .theme-adjustments-drawer,
+    .titlebar-more-menu,
+    .tb-search-panel,
+    .toast-card
+  ) {
+  border-color: rgba(205, 255, 252, 0.12) !important;
+  background:
+    radial-gradient(120% 110% at 0% 0%, color-mix(in srgb, var(--ql-accent) 10%, transparent), transparent 52%),
+    radial-gradient(105% 100% at 100% 100%, color-mix(in srgb, var(--ql-accent-2) 7%, transparent), transparent 58%),
+    rgba(16, 39, 46, 0.92) !important;
+  box-shadow: 0 24px 64px rgba(0, 6, 11, 0.34) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   交互状态矩阵
+   未选中：中性次要文字；hover：淡色底+正文色；active/选中：强调色底+强描边；
+   按下：再深一级；disabled：低透明度。所有状态在浅青／浅蓝背景上有明确区分。
+   ───────────────────────────────────────────────────────────────────────── */
+
+html.ql-theme-active {
+  --ql-hover-bg: color-mix(in srgb, var(--ql-accent) 7%, rgba(255, 255, 255, 0.48));
+  --ql-pressed-bg: color-mix(in srgb, var(--ql-accent) 13%, rgba(255, 255, 255, 0.36));
+  --ql-selected-bg: color-mix(in srgb, var(--ql-accent) 15%, rgba(255, 255, 255, 0.28));
+  --ql-selected-bg-2: color-mix(in srgb, var(--ql-accent-2) 12%, rgba(255, 255, 255, 0.3));
+  --ql-selected-line: color-mix(in srgb, var(--ql-accent) 34%, transparent);
+  --ql-selected-row-bg: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--ql-accent) 16%, transparent),
+    color-mix(in srgb, var(--ql-accent-2) 7%, transparent)
+  );
+  --ql-neutral-hover: rgba(255, 255, 255, 0.5);
+  --ql-disabled-opacity: 0.46;
+}
+
+html.ql-theme-active :is(button, a, [role='button'], [role='menuitem'], [role='tab']) {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html.ql-theme-active :is(button, a, [role='button'], [role='menuitem'], [role='tab']):focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--ql-accent) 74%, #ffffff) !important;
+  outline-offset: 2px !important;
+}
+
+html.ql-theme-active :is(button, [role='button'], [role='menuitem'], [role='tab']):disabled,
+html.ql-theme-active :is(button, [role='button'], [role='menuitem'], [role='tab'])[aria-disabled='true'] {
+  opacity: var(--ql-disabled-opacity) !important;
+  cursor: not-allowed !important;
+}
+
+/* 通用图标按钮 */
+html.ql-theme-active :is(
+    .action-icon:not(.playback-action),
+    .titlebar-icon-action,
+    .window-action
+  ) {
+  color: var(--ql-muted) !important;
+  border-radius: 999px !important;
+  transition:
+    color 140ms ease,
+    background-color 140ms ease,
+    box-shadow 140ms ease;
+}
+
+html.ql-theme-active :is(
+    .action-icon:not(.playback-action),
+    .titlebar-icon-action,
+    .window-action
+  ):hover:not(:disabled) {
+  color: var(--ql-text) !important;
+  background: var(--ql-hover-bg) !important;
+}
+
+html.ql-theme-active :is(
+    .action-icon:not(.playback-action),
+    .titlebar-icon-action,
+    .window-action
+  ):active:not(:disabled) {
+  color: var(--ql-accent-strong) !important;
+  background: var(--ql-pressed-bg) !important;
+}
+
+/* 侧栏导航：未选中、悬停、选中三层必须一眼可辨 */
+html.ql-theme-active :is(.sidebar-nav-item, .sidebar-library-item, .sidebar-rail-item) {
+  color: var(--ql-muted) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active :is(.sidebar-nav-item, .sidebar-library-item, .sidebar-rail-item):hover {
+  color: var(--ql-text) !important;
+  background: color-mix(in srgb, var(--ql-accent) 14%, rgba(255, 255, 255, 0.24)) !important;
+}
+
+html.ql-theme-active :is(.sidebar-nav-item, .sidebar-library-item, .sidebar-rail-item):active {
+  color: var(--ql-accent-strong) !important;
+  background: color-mix(in srgb, var(--ql-accent) 20%, rgba(255, 255, 255, 0.14)) !important;
+}
+
+html.ql-theme-active :is(
+    .sidebar-nav-item.is-active,
+    .sidebar-library-item.is-active,
+    .sidebar-nav-item[aria-current='page'],
+    .sidebar-library-item[aria-current='page'],
+    .sidebar-rail-item.is-active
+  ) {
+  color: var(--ql-accent-strong) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active :is(
+    .sidebar-nav-item.is-active,
+    .sidebar-library-item.is-active,
+    .sidebar-nav-item[aria-current='page'],
+    .sidebar-library-item[aria-current='page']
+  ) :is(svg, .sidebar-item-label) {
+  color: var(--ql-accent-strong) !important;
+}
+
+/* 侧栏功能卡与快捷卡：点击前、悬停、按下、选中 */
+html.ql-theme-active :is(.shortcut-card, .shortcut-add, .user-info-card) {
+  color: var(--ql-text) !important;
+}
+
+html.ql-theme-active :is(.shortcut-card, .shortcut-add, .user-info-card):hover {
+  border-color: var(--ql-selected-line) !important;
+  background:
+    radial-gradient(100% 130% at 0% 0%, color-mix(in srgb, var(--ql-accent) 8%, transparent), transparent 58%),
+    var(--ql-neutral-hover) !important;
+}
+
+html.ql-theme-active :is(.shortcut-card, .shortcut-add, .user-info-card):active {
+  background: var(--ql-pressed-bg) !important;
+}
+
+html.ql-theme-active :is(
+    .shortcut-card.prism-tile-active,
+    .shortcut-card.is-active,
+    .shortcut-card[aria-current='page']
+  ) {
+  color: var(--ql-accent-strong) !important;
+  border-color: var(--ql-selected-line) !important;
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--ql-accent) 18%, rgba(255, 255, 255, 0.62)),
+      color-mix(in srgb, var(--ql-accent-2) 8%, rgba(255, 255, 255, 0.48))
+    ) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.76),
+    inset 0 0 0 1px var(--ql-selected-line) !important;
+}
+
+/* Tab：未选中中性、悬停正文色、选中主色下划线 */
+html.ql-theme-active :is(.miuix-tab .tab-trigger, .miuix-tabs-list .tab-trigger, .favorites-tab-list .tab-trigger) {
+  color: var(--ql-muted) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active :is(.miuix-tab .tab-trigger, .miuix-tabs-list .tab-trigger, .favorites-tab-list .tab-trigger):hover {
+  color: var(--ql-text) !important;
+  background: transparent !important;
+}
+
+html.ql-theme-active :is(.miuix-tab .tab-trigger, .miuix-tabs-list .tab-trigger, .favorites-tab-list .tab-trigger)[aria-selected='true'],
+html.ql-theme-active :is(.miuix-tab .tab-trigger, .miuix-tabs-list .tab-trigger, .favorites-tab-list .tab-trigger).is-active,
+html.ql-theme-active :is(.miuix-tab .tab-trigger, .miuix-tabs-list .tab-trigger, .favorites-tab-list .tab-trigger)[data-state='active'] {
+  color: var(--ql-accent-strong) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active .favorites-tab-list .tab-trigger:active {
+  color: var(--ql-accent-strong) !important;
+}
+
+/* 列表行：hover 是浅色底，选中还必须带左侧主色条 */
+html.ql-theme-active .song-list-row {
+  color: var(--ql-text) !important;
+}
+
+html.ql-theme-active .song-list-row:hover {
+  color: var(--ql-text) !important;
+  background: var(--ql-hover-bg) !important;
+}
+
+html.ql-theme-active .song-list-row:active {
+  background: var(--ql-pressed-bg) !important;
+}
+
+html.ql-theme-active .song-list-row.is-active {
+  color: var(--ql-accent-strong) !important;
+  background: var(--ql-selected-row-bg) !important;
+  box-shadow: inset 3px 0 0 var(--ql-accent) !important;
+}
+
+html.ql-theme-active .song-list-row.is-active :is(
+    .song-title,
+    .song-artist,
+    .song-list-meta-link
+  ) {
+  color: var(--ql-accent-strong) !important;
+}
+
+/* 标签、选择卡、主题卡 */
+html.ql-theme-active .style-tag-btn {
+  color: var(--ql-muted) !important;
+  background: rgba(255, 255, 255, 0.38) !important;
+  border: 1px solid transparent !important;
+}
+
+html.ql-theme-active .style-tag-btn:hover {
+  color: var(--ql-text) !important;
+  background: var(--ql-neutral-hover) !important;
+}
+
+html.ql-theme-active .style-tag-btn:active {
+  background: var(--ql-pressed-bg) !important;
+}
+
+html.ql-theme-active .style-tag-btn.active {
+  color: var(--ql-accent-strong) !important;
+  background:
+    linear-gradient(
+      135deg,
+      var(--ql-selected-bg),
+      var(--ql-selected-bg-2)
+    ) !important;
+  border-color: var(--ql-selected-line) !important;
+}
+
+html.ql-theme-active .theme-select-card {
+  border: 1px solid var(--ql-card-line) !important;
+  background:
+    radial-gradient(120% 100% at 0% 0%, color-mix(in srgb, var(--ql-accent) 5%, transparent), transparent 55%),
+    rgba(255, 255, 255, 0.45) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72) !important;
+}
+
+html.ql-theme-active .theme-select-card:hover {
+  border-color: var(--ql-selected-line) !important;
+  background:
+    radial-gradient(120% 100% at 0% 0%, color-mix(in srgb, var(--ql-accent) 9%, transparent), transparent 58%),
+    rgba(255, 255, 255, 0.58) !important;
+}
+
+html.ql-theme-active .theme-select-card:active {
+  background: var(--ql-pressed-bg) !important;
+}
+
+html.ql-theme-active .theme-select-card[aria-pressed='true'] {
+  border-color: color-mix(in srgb, var(--ql-accent) 48%, transparent) !important;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--ql-accent) 28%, transparent),
+    0 8px 24px color-mix(in srgb, var(--ql-accent) 12%, transparent) !important;
+}
+
+html.ql-theme-active .theme-color-swatch[aria-pressed='true'] {
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.94),
+    0 0 0 4px color-mix(in srgb, var(--ql-accent) 58%, transparent) !important;
+}
+
+/* 仅真正的 solid-primary 使用实色主按钮，避免误伤 soft-primary。 */
+html.ql-theme-active .echo-button-solid-primary {
+  color: #ffffff !important;
+  background:
+    linear-gradient(
+      135deg,
+      var(--ql-accent-strong) 0%,
+      color-mix(in srgb, var(--ql-accent-strong) 82%, var(--ql-accent-2)) 100%
+    ) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+html.ql-theme-active .echo-button-solid-primary:hover:not(:disabled) {
+  filter: brightness(1.07);
+}
+
+html.ql-theme-active .echo-button-solid-primary:active:not(:disabled) {
+  filter: brightness(0.93);
+}
+
+html.ql-theme-active :is(
+    .echo-button-secondary,
+    .echo-button-outline,
+    .soft-neutral-action,
+    .soft-secondary-action,
+    .action-btn.secondary
+  ) {
+  color: var(--ql-text) !important;
+  border-color: color-mix(in srgb, var(--ql-accent) 8%, var(--ql-line)) !important;
+  background:
+    linear-gradient(
+      138deg,
+      rgba(255, 255, 255, 0.62),
+      color-mix(in srgb, var(--ql-accent-2) 4%, rgba(255, 255, 255, 0.48))
+    ) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.86) !important;
+}
+
+html.ql-theme-active :is(
+    .echo-button-secondary,
+    .echo-button-outline,
+    .soft-neutral-action,
+    .soft-secondary-action,
+    .action-btn.secondary
+  ):hover:not(:disabled) {
+  border-color: var(--ql-selected-line) !important;
+  background: var(--ql-hover-bg) !important;
+}
+
+html.ql-theme-active :is(
+    .echo-button-secondary,
+    .echo-button-outline,
+    .soft-neutral-action,
+    .soft-secondary-action,
+    .action-btn.secondary
+  ):active:not(:disabled) {
+  background: var(--ql-pressed-bg) !important;
+}
+
+/* 详情页操作行：收藏/强调动作保留语义红，不被通用 secondary 样式覆盖。 */
+html.ql-theme-active .action-btn.secondary.favorite {
+  color: var(--ql-heart) !important;
+  border-color: color-mix(in srgb, var(--ql-heart) 18%, transparent) !important;
+  background: color-mix(in srgb, var(--ql-heart) 9%, rgba(255, 255, 255, 0.52)) !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active .action-btn.secondary.favorite:hover {
+  color: color-mix(in srgb, var(--ql-heart) 88%, #7d2636) !important;
+  background: color-mix(in srgb, var(--ql-heart) 14%, rgba(255, 255, 255, 0.52)) !important;
+}
+
+html.ql-theme-active .action-btn.secondary.emphasized {
+  color: var(--state-danger, #d94e68) !important;
+  border-color: color-mix(in srgb, var(--state-danger, #d94e68) 18%, transparent) !important;
+  background: color-mix(in srgb, var(--state-danger, #d94e68) 9%, rgba(255, 255, 255, 0.52)) !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active .echo-button-ghost {
+  color: var(--ql-muted) !important;
+}
+
+html.ql-theme-active .echo-button-ghost:hover:not(:disabled) {
+  color: var(--ql-text) !important;
+  background: var(--ql-hover-bg) !important;
+}
+
+html.ql-theme-active .echo-button-ghost:active:not(:disabled) {
+  color: var(--ql-accent-strong) !important;
+  background: var(--ql-pressed-bg) !important;
+}
+
+html.ql-theme-active :is(
+    .settings-input,
+    .echo-input,
+    .song-search-input,
+    .shortcut-input
+  ):hover:not(:disabled) {
+  border-color: var(--ql-selected-line) !important;
+  background: rgba(255, 255, 255, 0.54) !important;
+}
+
+html.ql-theme-active a:not(.echo-button-control):hover {
+  color: var(--ql-accent-strong) !important;
+}
+
+html.ql-theme-active :is(.playlist-card-list, .add-to-item, .grant-row):hover {
+  background: var(--ql-hover-bg) !important;
+}
+
+html.ql-theme-active :is(.playlist-card-list, .add-to-item, .grant-row):active {
+  background: var(--ql-pressed-bg) !important;
+}
+
+/* 菜单项与浮层内的操作 */
+html.ql-theme-active :is(
+    .titlebar-more-item,
+    .tb-suggest-item,
+    .sidebar-create-menu-item,
+    [role='menuitem']
+  ) {
+  color: var(--ql-text) !important;
+}
+
+html.ql-theme-active :is(
+    .titlebar-more-item,
+    .tb-suggest-item,
+    .sidebar-create-menu-item,
+    [role='menuitem']
+  ):hover {
+  background: var(--ql-hover-bg) !important;
+}
+
+html.ql-theme-active :is(
+    .titlebar-more-item,
+    .tb-suggest-item,
+    .sidebar-create-menu-item,
+    [role='menuitem']
+  ):active {
+  background: var(--ql-pressed-bg) !important;
+}
+
+/* 播放栏：常态完全继承宿主，只在 hover / 选中时换成主题色，不绘制底板。 */
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-player='on'] .player-bar :is(.playback-action, .bar-action):hover:not(:disabled),
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-player='on'] .player-bar :is(.playback-action, .bar-action):active:not(:disabled) {
+  color: var(--ql-accent) !important;
+  background: transparent !important;
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-player='on'] .player-bar .playback-action.is-active {
+  color: var(--ql-accent) !important;
+  background: transparent !important;
+}
+
+html.ql-theme-active .player-bar .action-icon {
+  color: inherit !important;
+  background: transparent !important;
+}
+
+/* 音质触发器同时带 action-icon 与 playback-action。只改图标色，不画任何底板。 */
+html.ql-theme-active .player-bar button.action-icon.playback-action,
+html.ql-theme-active .player-bar button.action-icon.playback-action:hover:not(:disabled),
+html.ql-theme-active .player-bar button.action-icon.playback-action:active:not(:disabled),
+html.ql-theme-active .player-bar button.action-icon.playback-action:focus,
+html.ql-theme-active .player-bar button.action-icon.playback-action:focus-visible,
+html.ql-theme-active .player-bar button.action-icon.playback-action[data-state='open'],
+html.ql-theme-active .player-bar button.action-icon.playback-action[aria-expanded='true'] {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active .player-bar button.action-icon.playback-action > *,
+html.ql-theme-active .player-bar button.action-icon.playback-action::before,
+html.ql-theme-active .player-bar button.action-icon.playback-action::after {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-player='on'] .player-bar .action-icon:hover:not(:disabled),
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-player='on'] .player-bar .action-icon:active:not(:disabled) {
+  color: var(--ql-accent) !important;
+  background: transparent !important;
+}
+
+html.ql-theme-active[data-ql-icons='native'] .shortcut-grid > .shortcut-card .shortcut-icon,
+html.ql-theme-active[data-ql-icons='native'] .shortcut-add .shortcut-icon,
+html.ql-theme-active[data-ql-icons='native'] .shortcut-add svg {
+  color: var(--ql-text) !important;
+}
+
+html.ql-theme-active[data-ql-icons='native'] .sidebar-app-tools .sidebar-app-tool svg,
+html.ql-theme-active[data-ql-icons='native'] .sidebar-rail-bottom .sidebar-app-tool svg {
+  color: var(--ql-muted) !important;
+}
+
+/* 真正的收藏状态始终为红色；导航入口属于各自区域。 */
+html.ql-theme-active .player-bar button[aria-label='取消收藏'] svg {
+  color: var(--ql-heart) !important;
+}
+
+html.ql-theme-active .player-bar .playback-action.is-favorite {
+  color: var(--ql-heart) !important;
+  background: transparent !important;
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-titlebar='on'] .titlebar-tools button[aria-pressed='true']:is(
+    [aria-label*='收藏'],
+    [aria-label*='星标'],
+    [aria-label*='评分']
+  ) svg {
+  color: var(--ql-star) !important;
+}
+
+/* 其余导航按稳定语义定色，不按位置轮换。 */
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-sidebar='on'] .sidebar-nav-item[data-ql-semantic='favorite'] svg,
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-sidebar='on'] .sidebar-nav-item[data-ql-semantic='favorite'].is-active svg,
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-sidebar='on'] .sidebar-nav-item[data-ql-semantic='favorite'][aria-current='page'] svg {
+  color: var(--ql-heart) !important;
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-sidebar='on'] .sidebar-nav-item[data-ql-semantic='history'] svg {
+  color: var(--ql-accent-3) !important;
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-sidebar='on'] .sidebar-nav-item[data-ql-semantic='radio'] svg,
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-sidebar='on'] .sidebar-nav-item[data-ql-semantic='cloud'] svg {
+  color: var(--ql-accent-2) !important;
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-sidebar='on'] .sidebar-playlist-header button[aria-label='刷新歌单'] svg {
+  color: var(--ql-accent-2) !important;
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-sidebar='on'] .sidebar-playlist-header button[aria-label='添加歌单'] svg {
+  color: var(--ql-accent) !important;
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-sidebar='on'] .sidebar-playlist-header button[aria-label='调整歌单顺序'] svg {
+  color: var(--ql-accent-4) !important;
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-titlebar='on'] :is(
+    .titlebar-action[aria-label='听歌识曲'],
+    [data-titlebar-key='recognize'].titlebar-action
+  ) {
+  color: var(--ql-accent-2) !important;
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-titlebar='on'] :is(
+    .titlebar-action[aria-label='听歌识曲'],
+    [data-titlebar-key='recognize'].titlebar-action
+  ) :is(svg, .plugin-icon) {
+  color: var(--ql-accent-2) !important;
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-titlebar='on'] .tb-search-icon {
+  color: var(--ql-accent-2) !important;
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-titlebar='on'] .tb-search-icon :is(
+    circle,
+    path,
+    line,
+    polyline,
+    rect
+  ) {
+  stroke: var(--ql-accent-2) !important;
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-content='on'] .song-actions button:hover svg {
+  color: var(--ql-accent-2) !important;
+}
+
+html.ql-theme-active[data-ql-icons='colorful'][data-ql-icon-content='on'] .theme-action svg {
+  color: var(--ql-accent-2) !important;
+}
+
+/* 播放页右侧工具栏：完全沿用原生按钮底色，只把方形改成圆形。 */
+html.ql-theme-active .lyric-page-tools .lyric-page-tool-btn {
+  border: 0 !important;
+  border-radius: 50% !important;
+  box-shadow: none !important;
+  transition:
+    background-color var(--motion-duration-fast) var(--motion-ease-standard),
+    color var(--motion-duration-fast) var(--motion-ease-standard) !important;
+}
+
+html.ql-theme-active .lyric-page-tools .lyric-page-tool-btn:not(.soft-accent-action) {
+  color: var(--color-text-main) !important;
+  background: var(--control-muted-bg) !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active .lyric-page-tools .lyric-page-tool-btn:not(.soft-accent-action):hover:not(:disabled) {
+  background: var(--control-hover-bg) !important;
+  color: var(--color-text-main) !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active .lyric-page-tools .lyric-page-tool-btn:not(.soft-accent-action):active:not(:disabled) {
+  background: var(--control-neutral-pressed-bg) !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active .lyric-page-tools .lyric-page-tool-btn.soft-accent-action {
+  color: var(--color-primary-text) !important;
+  background: var(--control-active-bg) !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active .lyric-page-tools .lyric-page-tool-btn.soft-accent-action:hover:not(:disabled) {
+  background: var(--control-accent-hover-bg) !important;
+  box-shadow: none !important;
+}
+
+html.ql-theme-active .lyric-page-tools .lyric-page-tool-btn.soft-accent-action:active:not(:disabled) {
+  background: var(--control-accent-pressed-bg) !important;
+  box-shadow: none !important;
+}
+
+/* 深色模式下用更亮的背景层维持同样的状态辨识度 */
+html.ql-theme-active.dark {
+  --ql-hover-bg: color-mix(in srgb, var(--ql-accent) 11%, rgba(255, 255, 255, 0.06));
+  --ql-pressed-bg: color-mix(in srgb, var(--ql-accent) 18%, rgba(255, 255, 255, 0.04));
+  --ql-selected-bg: color-mix(in srgb, var(--ql-accent) 20%, rgba(255, 255, 255, 0.035));
+  --ql-selected-bg-2: color-mix(in srgb, var(--ql-accent-2) 14%, rgba(255, 255, 255, 0.03));
+  --ql-neutral-hover: rgba(255, 255, 255, 0.085);
+}
+
+html.ql-theme-active.dark :is(
+    .shortcut-card,
+    .shortcut-add,
+    .user-info-card,
+    .theme-select-card,
+    .echo-button-secondary,
+    .echo-button-outline,
+    .soft-neutral-action,
+    .soft-secondary-action
+  ) {
+  color: var(--ql-text) !important;
+  background: rgba(255, 255, 255, 0.075) !important;
+}
+
+html.ql-theme-active.dark :is(
+    .shortcut-card,
+    .shortcut-add,
+    .user-info-card,
+    .theme-select-card,
+    .echo-button-secondary,
+    .echo-button-outline,
+    .soft-neutral-action,
+    .soft-secondary-action
+  ):hover {
+  background: var(--ql-hover-bg) !important;
+}
+
+/* ── 无障碍与窄窗 ─────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  html.ql-theme-active *,
+  html.ql-theme-active *::before,
+  html.ql-theme-active *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (max-width: 900px) {
+  html.ql-theme-active .ql-halo {
+    filter: blur(54px);
+  }
+
+  html.ql-theme-active .home-feature-card {
+    border-radius: 14px !important;
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "晴岚 · 清透主题",
+  "homepage": "https://github.com/zhonglixun/echomusic-clear-glass-theme",
+  "plugins": [
+    {
+      "id": "clear-glass-theme",
+      "path": "",
+      "repo": "https://github.com/zhonglixun/echomusic-clear-glass-theme",
+      "homepage": "https://github.com/zhonglixun/echomusic-clear-glass-theme",
+      "tags": [
+        "appearance",
+        "theme",
+        "light",
+        "glass"
+      ]
+    }
+  ]
+}
+

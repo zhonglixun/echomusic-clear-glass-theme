@@ -1,0 +1,16 @@
+{
+  "id": "clear-glass-theme",
+  "name": "晴岚 · 清透主题",
+  "version": "1.5.4",
+  "description": "在「主题中心 → 主题」选择薄荷/晴空；进入「外观调整」可调透明度、光影、阴影和分区图标点缀。",
+  "author": "zhonglixun",
+  "icon": "icon.svg",
+  "main": "index.js",
+  "style": "style.css",
+  "capabilities": {
+    "theme": true
+  },
+  "requires": {
+    "echoMusicVersion": ">=2.3.2-beta.7"
+  }
+}
