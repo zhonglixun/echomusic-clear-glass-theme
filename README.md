@@ -23,6 +23,14 @@
 | 晴岚 · 薄荷 | 薄荷青与雾白渐变，轻描边、低灰阶的透亮界面 |
 | 晴岚 · 晴空 | 天青蓝与蓝紫点缀，清爽干净，不偏青绿 |
 
+## 效果预览
+
+以下截图来自未登录的隔离环境，保留真实 EchoMusic 侧栏、搜索、快捷卡、筛选控件、歌曲列表和底部播放栏。
+
+![晴岚双主题真实界面对比](./screenshots/theme-comparison.png)
+
+[查看薄荷大图](./screenshots/qinglan-mint.png) · [查看晴空大图](./screenshots/qinglan-sky.png)
+
 ## 在线安装
 
 在 EchoMusic「插件管理 → 在线插件」添加插件源：
@@ -39,8 +47,6 @@ https://github.com/zhonglixun/echomusic-clear-glass-theme
 2. 打开左下角 T 恤图标 →「主题中心」→「主题」。
 3. 选择「晴岚 · 薄荷」或「晴岚 · 晴空」。
 4. 进入「外观调整」可继续调整面板雾白度、氛围光感、阴影和分区图标点缀。
-
-> 「个性主题」是进入主题中心后的页面标题，不是插件启用入口。
 
 ## 功能
 
@@ -76,6 +82,7 @@ style.css          主题视觉样式
 icon.svg           插件图标
 echo-plugins.json  本仓库在线插件源
 tests/             插件契约测试
+screenshots/       真实界面效果图
 ```
 
 发布说明和约束见 [CONTRIBUTING.md](./CONTRIBUTING.md)。
